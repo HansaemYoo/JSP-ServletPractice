@@ -14,7 +14,7 @@ pageEncoding="UTF-8"%>
 	요청정보 컨텐츠타입 = <%= request.getContentType() %> <br>
 	요청정보 프로토콜 = <%= request.getProtocol() %> <br>
 	요청정보 전송방식 = <%= request.getMethod() %> <br>
-	요청 URL = <%= request.getRequestURL() %> <br>
+	요청 URㅑ = <%= request.getRequestURI() %> <br>
 	컨텍스트 경로 = <%= request.getContextPath() %> <br>
 	서버이름 = <%= request.getServerName() %> <br>
 	
