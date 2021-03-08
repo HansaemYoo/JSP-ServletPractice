@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>ServletDataPjt</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param> <!-- 모든 서블릿공유 -->
+  	<param-name>imgDir</param-name>
+  	<param-value>/upload/img</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>testServerIP</param-name>
+  	<param-value>127.0.0.1</param-value>s
+  </context-param>
+  
+  <!-- 서블릿 이름을 실제 서블릿 클래스에 연결 -->
+  <servlet>
+  <!-- 아래 매핑 설정에서의 servlet-name은 반드시 같아야한다. -->
+  	<servlet-name>ServletEx</servlet-name>
+  	<!-- 개발자에 의해 작성된 실제 클래스 이름으로 설정해야 된다. -->
+  	<servlet-class>com.servlet.ServletEx</servlet-class>
+  	<init-param> <!-- 특정서블릿에서만 이용가능 -->
+  		<param-name>adminID</param-name>
+  		<param-value>admin</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>adminPW</param-name>
+  		<param-value>1234s</param-value>
+  	</init-param>
+  </servlet>
+  <!-- ServletEx파일 SE로 맵핑 -->
+  <servlet-mapping>
+  	<servlet-name>ServletEx</servlet-name>
+  	<url-pattern>/SE</url-pattern>
+  </servlet-mapping>
+</web-app>
